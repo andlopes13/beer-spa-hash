@@ -1,19 +1,15 @@
 import routes from '/js/routes.js';
 
-
 async function launchController(controllerName) {
     console.log("launchin controller");
     const module = await import(`./controler/${controllerName}.js`);
     console.log(module);
     module.default.init();
-
-
 }
 
 function setCurrentPath({ path, controller }) {
     routes.currentPath.path = path;
     routes.currentPath.controller = controller;
-
     console.log("current path: ", routes.currentPath);
 }
 
@@ -30,11 +26,9 @@ function navigate(path) {
 
     setCurrentPath(route);
     launchController(route.controller);
-
 }
 
 function getPath(urlStr) {
-
     return new URL(urlStr).hash.slice(1);
 }
 
@@ -45,16 +39,12 @@ function navigateOnHashChange() {
     })
 }
 
-
 function init() {
-
-
     window.location.hash = window.location.hash || routes.home.path;
     console.log("hello again", window.location.hash);
 
     navigate(getPath(window.location.href));
     navigateOnHashChange();
-
 }
 
 export default { init };

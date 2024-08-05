@@ -1,12 +1,11 @@
-
 export default {
   home: {
     path: '/',
     controller: 'homeController'
   },
 
-  films: {
-    path: '/beer',
+  beers: {
+    path: '/allbeer',
     controller: 'beerController'
   },
 

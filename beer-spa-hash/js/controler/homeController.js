@@ -4,16 +4,12 @@ import beerService from '/js/service/beerService.js';
 async function init() {
 
   try {
-
-    console.log("da home controller" + beerService.beers);
-
-  
-  const beer1 = await beerService.beers;
-  homeView.render(beer1);
+    console.log("Da home controller" + beerService.beers); // Help with code debugging
+    const beer1 = await beerService.beers;
+    homeView.render(beer1); // Render the beers in the DOM
 
   } catch(error) {
-    console.error("error fetching beers", error);
-
+    console.error("Error fetching beers", error);
   }
 };
 

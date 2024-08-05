@@ -4,13 +4,13 @@ function render(beers) {
   const div = document.createElement('div');
 
   div.className = `text-center`;
-  button.className = `btn btn-primary`;
+  button.className = `btn btn-success`;
   button.type = `button`;
   button.style = `margin-top: 10%; margin-bottom: 10%`;
 
   div.appendChild(button);
 
-  container.innerHTML = ''; //removes the previous elements
+  container.innerHTML = ''; // Removes the previous elements
   button.innerText = `CLICK ME FOR RANDOM BEER`;
 
   button.addEventListener('click', async e => {
@@ -21,16 +21,15 @@ function render(beers) {
       name,
       price,
       image
-
     } = beers[Math.floor(Math.random() * beers.length)];
     const elem = document.createElement('div');
     elem.className = `text-center`;
 
     elem.innerHTML = `<h1>${name}</h1>
         <h3>${price}</h3>
-        <img src="${image}" alt="No Image" style="width: 25%;">`;
+        <img src="${image}" alt="No Image" style="width: 10%;">`;
 
-
+    // Garante que apenas uma cerveja aleatória seja exibida por vez
     if (container.childElementCount > 1) {
       container.removeChild(container.lastChild);
     }
