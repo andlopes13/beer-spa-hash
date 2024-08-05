@@ -1,8 +1,8 @@
 import typeView from '../view/typeView.js';
 import BeerService from '../service/beerService.js';
 
-export default async function typeController() {
-    const beerService = new BeerService();
+async function typeController() {
+
     const data = await beerService.fetchTypes();
     document.getElementById('container').innerHTML = typeView(data);
 
@@ -18,3 +18,5 @@ export default async function typeController() {
         });
     });
 }
+
+export default { init };

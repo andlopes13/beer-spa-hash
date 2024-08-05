@@ -1,5 +1,7 @@
 import aboutView from '../view/aboutView.js';
 
-export default async function aboutController() {
-    document.getElementById('container').innerHTML = aboutView();
+function init() {
+    aboutView.render();
 }
+
+export default { init };
