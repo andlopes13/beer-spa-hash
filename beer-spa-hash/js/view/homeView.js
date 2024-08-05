@@ -1,5 +1,4 @@
-function render(onClick) {
-
+function render(beers) {
   const container = document.querySelector('#container');
   const button = document.createElement('button');
   const div = document.createElement('div');
@@ -11,23 +10,26 @@ function render(onClick) {
 
   div.appendChild(button);
 
-  container.innerHTML = '';
-  button.innerText = `Click me`;
+  container.innerHTML = ''; //removes the previous elements
+  button.innerText = `CLICK ME FOR RANDOM BEER`;
 
   button.addEventListener('click', async e => {
     e.preventDefault();
+    console.log("IM HERE" + beers)
 
     const {
-      types,
-      brands,
-      nationalities,
-    } = await onClick(parseInt(Math.random() * 10));
+      name,
+      price,
+      image
+
+    } = beers[Math.floor(Math.random() * beers.length)];
     const elem = document.createElement('div');
     elem.className = `text-center`;
 
-    elem.innerHTML = `<h1>${types}</h1>
-        <h3>${brands}</h3>
-        <h3>${nationalities}</h3>`;
+    elem.innerHTML = `<h1>${name}</h1>
+        <h3>${price}</h3>
+        <img src="${image}" alt="No Image" style="width: 25%;">`;
+
 
     if (container.childElementCount > 1) {
       container.removeChild(container.lastChild);
@@ -40,15 +42,3 @@ function render(onClick) {
 };
 
 export default { render };
-
-/*export default function homeView() {
-  return `
-      <div class="text-center">
-          <h1>Welcome to the Beer SPA</h1>
-          <p>Explore different types of beers, their nationalities, and brands.</p>
-            <div class="welcome-btn">
-          <button id="welcome-btn" class="btn btn-primary">Click Me!</button>
-      </div>
-    </div>
-  `;
-}*/
