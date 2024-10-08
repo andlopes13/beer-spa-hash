@@ -1,21 +1,18 @@
-BEER SPA HASH
+BEER INFO APP
 
-Night Manager is an application to make it easier for friends to plan nights out. 
-The application allows you to register members of a group, 
-define a person in charge of the evening, 
-and send messages and alerts to registered participants.
+Beer Info App is an application that allows users to consult 
+information about beers, including prices, brands and nationalities, 
+through integration with an external API.
 
 FEATURES
 
-Group Registration: Allows users to create a group 
-of friends and register the members for a particular night.
+Beer enquiry: Displays a list of beers with details such as brand, 
+price and country of origin.
 
-Definition of the person in charge: One of the group members is 
-designated as the person in charge of coordinating the evening's activities.
+Filtering: Allows you to filter beers by brand or nationality.
+External API consumption: The application consumes an external 
+API to provide up-to-date beer data.
 
-Sending Messages and Alerts: The person in charge of the group 
-can send messages and alerts to all the members registered for that night.
+TECHONOLOGIES USED
 
-TECHNOLOGIES USED
-
-Frontend: JavaScript, HTML, CSS.
+Frontend: JavaScript, HTML, CSS
