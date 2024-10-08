@@ -1,4 +1,4 @@
-NIGHT MANAGER
+BEER SPA HASH
 
 Night Manager is an application to make it easier for friends to plan nights out. 
 The application allows you to register members of a group, 
