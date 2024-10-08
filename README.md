@@ -11,5 +11,5 @@ Features
 
 Technologies used
 
-    Frontend: HTML, CSS.
+    Frontend: JavaScript, HTML, CSS.
     
